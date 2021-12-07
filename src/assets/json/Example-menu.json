@@ -1,0 +1,71 @@
+[
+    {
+        "key":"map",
+        "title":"地图",
+        "icon":"iconfont icon-mapNew"
+    },
+    {
+        "key":"point",
+        "title":"点",
+        "icon":"iconfont icon-didian",
+        "children":[
+            {
+                "key":"heat-point",
+                "title":"热力图",
+                "icon":"iconfont icon-relitu1"
+            },
+            {
+                "key":"twinkle-point",
+                "title":"闪烁点",
+                "icon":"iconfont icon-yanjizhushou-shangchuan_shanguangdeng"
+            },
+            {
+                "key":"culster-point",
+                "title":"聚合",
+                "icon":"iconfont icon-juhejiedian"
+            }
+        ]
+    },
+    {
+        "key":"Polyline",
+        "title":"线",
+        "icon":"iconfont icon-xian"
+    },
+    {
+        "key":"Polygon",
+        "title":"面",
+        "icon":"iconfont icon-mianjiicon",
+        "children":[
+            {
+                "key":"Rectangle",
+                "title":"矩形",
+                "icon":"iconfont icon-24gf-rectangle"
+            },
+            {
+                "key":"Circle",
+                "title":"圆",
+                "icon":"iconfont icon-big-circle"
+            },
+            {
+                "key":"CircleMarker",
+                "title":"固定圆",
+                "icon":"iconfont icon-ditu-yuan"
+            },
+            {
+                "key":"SVG",
+                "title":"SVG",
+                "icon":"iconfont icon-svg"
+            },
+            {
+                "key":"Canvas",
+                "title":"Canvas",
+                "icon":"iconfont icon-canvas"
+            }
+        ]
+    },
+    {
+        "key":"services",
+        "title":"地图服务",
+        "icon":"iconfont icon-map"
+    }
+]
