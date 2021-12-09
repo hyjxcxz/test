@@ -19,6 +19,7 @@
 import Examplemenudata from "@/assets/json/Example-menu.json";
 import MenuTree from "@/components/example/MenuTree.vue";
 import { Map } from "../../utils/map";
+import BaseLayer from "@/components/example/map/baseLayers/BaseLayers";
 export default {
   name: "ExampleIndex",
   components: {
@@ -27,6 +28,7 @@ export default {
   data() {
     return {
       data: Examplemenudata,
+      map: null,
     };
   },
   mounted() {
@@ -35,10 +37,31 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+      switch (key) {
+        case "map":
+          this.clearLayers();
+          break;
+        case "heat-point":
+          break;
+        case "TileLayer":
+          this.addTileLayer();
+          break;
+      }
     },
+    //新建map
     initMap() {
-      const map = Map("map");
-      console.log(map);
+      this.map = Map("map");
+      this.BaseLayer = new BaseLayer(this.map);
+    },
+    clearLayers() {
+      this.clearTileLayer();
+    },
+    addTileLayer() {
+      this.BaseLayer.TileLayer();
+    },
+    clearTileLayer() {
+      this.BaseLayer.clearTileLayer();
+      // this.BaseLayer.clearLayerById('test')
     },
   },
 };
@@ -55,7 +78,7 @@ export default {
   .example-content-instruction {
     float: left;
     width: calc(100% - 203px);
-    background-color: rgb(29, 137, 245);
+    // background-color: rgb(29, 137, 245);
     height: 100%;
   }
 }

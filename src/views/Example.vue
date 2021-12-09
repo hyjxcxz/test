@@ -13,6 +13,10 @@ export default {
 </script>
 <style scoped>
 .example {
-  height: calc(100% - 126px);
+  /* height: calc(100% - 126px); */
+  height: calc(100% - 70px);
+}
+.footer {
+  display: none;
 }
 </style>

@@ -66,6 +66,12 @@
     {
         "key":"services",
         "title":"地图服务",
-        "icon":"iconfont icon-map"
+        "icon":"iconfont icon-map",
+        "children":[
+            {
+                "key":"TileLayer",
+                "title":"TileLayer"
+            }
+        ]
     }
 ]

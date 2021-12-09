@@ -7,10 +7,10 @@ export const MapConfig = {
   initZoom: 4,
   minZoom: 4,
   maxZoom: 18,
-  maxBounds: [
-    [90, 180],
-    [-90, -180],
-  ],
+  // maxBounds: [
+  //   [90, 180],
+  //   [-90, -180],
+  // ],
 };
 
 export function getBaseLayers() {
@@ -21,6 +21,12 @@ export function getBaseLayers() {
  * 底图数据源
  */
 const BaseLayers = [
+  {
+    url: "http://webst0{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}",
+    subdomains: "1234",
+    attribution: "高德影像",
+    layerId: "test",
+  },
   {
     label: "谷歌影像",
     image: "./images/layer-google-img.png",
