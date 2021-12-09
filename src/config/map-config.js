@@ -7,10 +7,10 @@ export const MapConfig = {
   initZoom: 4,
   minZoom: 4,
   maxZoom: 18,
-  // maxBounds: [
-  //   [90, 180],
-  //   [-90, -180],
-  // ],
+  maxBounds: [
+    [90, 180],
+    [-90, -180],
+  ],
 };
 
 export function getBaseLayers() {

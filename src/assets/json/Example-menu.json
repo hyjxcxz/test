@@ -10,6 +10,21 @@
         "icon":"iconfont icon-didian",
         "children":[
             {
+                "key":"marker-point",
+                "title":"图标点位",
+                "icon":"iconfont icon-relitu1"
+            },
+            {
+                "key":"circle-marker-point",
+                "title":"圆形点位",
+                "icon":"iconfont icon-relitu1"
+            },
+            {
+                "key":"rectangle-point",
+                "title":"矩形点位",
+                "icon":"iconfont icon-relitu1"
+            },
+            {
                 "key":"heat-point",
                 "title":"热力图",
                 "icon":"iconfont icon-relitu1"

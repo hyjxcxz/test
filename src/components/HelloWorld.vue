@@ -3,9 +3,9 @@
     <div class="hello-title">
       <h1>{{ msg }}</h1>
       <h2>开源、可扩展</h2>
-      <div class="hello-title-downs">
+      <!-- <div class="hello-title-downs">
         <el-button type="primary" icon="">下载</el-button>
-      </div>
+      </div> -->
     </div>
     <div class="hello-describe">
       <p class="hello-describe-title">

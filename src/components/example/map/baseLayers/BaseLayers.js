@@ -8,11 +8,14 @@ export default class BaseLayer {
   TileLayer() {
     const FeatureLayer = this.FeatureLayer();
     this._featureGroup = FeatureLayer.featureGroup;
+    this._featureGroup.addTo(this._map);
     this._TileLayer = new L.GW.Layer.TileLayer(getBaseLayers()[0]);
     this._featureGroup.addLayer(this._TileLayer);
   }
   clearTileLayer() {
-    this._featureGroup.removeLayer(this._TileLayer); //直接根据layer本身清除对应图层
+    if (this._featureGroup && this._TileLayer) {
+      this._featureGroup.removeLayer(this._TileLayer); //直接根据layer本身清除对应图层
+    }
   }
   clearLayerById(layerId) {
     this._featureGroup.removeLayerById(layerId); //根据layerId清除对应图层

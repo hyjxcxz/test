@@ -7,6 +7,6 @@
 </template>
 <style scoped>
 .about {
-  /* height: calc(100% - 124px); */
+  min-height: calc(100% - 126px);
 }
 </style>

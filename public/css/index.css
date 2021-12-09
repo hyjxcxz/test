@@ -25,7 +25,7 @@ body{
     width: 200%;
     animation: pulsate 2s infinite;
     position: absolute;
-    margin: -50% 0 0 -50%;
+    margin: -50% 0 0 -100%;
 }
 
 @keyframes pulsate {
