@@ -12,22 +12,22 @@
             {
                 "key":"marker-point",
                 "title":"图标点位",
-                "icon":"iconfont icon-relitu1"
+                "icon":"iconfont icon-zuobiao"
             },
             {
                 "key":"circle-marker-point",
                 "title":"圆形点位",
-                "icon":"iconfont icon-relitu1"
+                "icon":"iconfont icon-ditu-yuan"
             },
             {
                 "key":"rectangle-point",
                 "title":"矩形点位",
-                "icon":"iconfont icon-relitu1"
+                "icon":"iconfont icon-24gf-rectangle"
             },
             {
                 "key":"heat-point",
                 "title":"热力图",
-                "icon":"iconfont icon-relitu1"
+                "icon":"iconfont icon-relitu2"
             },
             {
                 "key":"twinkle-point",
@@ -54,17 +54,12 @@
             {
                 "key":"Rectangle",
                 "title":"矩形",
-                "icon":"iconfont icon-24gf-rectangle"
+                "icon":"iconfont icon-quyuchache"
             },
             {
                 "key":"Circle",
                 "title":"圆",
                 "icon":"iconfont icon-big-circle"
-            },
-            {
-                "key":"CircleMarker",
-                "title":"固定圆",
-                "icon":"iconfont icon-ditu-yuan"
             },
             {
                 "key":"SVG",

@@ -150,6 +150,8 @@ export default {
     width: 201px;
     height: 100%;
     background-color: rgb(84, 92, 100);
+    overflow: auto;
+    max-height: 100%;
   }
   .example-content-instruction {
     float: left;
