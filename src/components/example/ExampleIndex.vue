@@ -30,6 +30,21 @@ export default {
     return {
       data: Examplemenudata,
       map: null,
+      pointArry: [
+        [40, 116],
+        [38, 115],
+        [30, 105],
+        [33, 98],
+        [23, 98],
+        [28, 100],
+        [29, 100],
+        [20, 80],
+        [40, 78],
+        [39, 77],
+        [39, 114],
+        [30, 117],
+        [29, 120],
+      ],
     };
   },
   mounted() {
@@ -83,27 +98,12 @@ export default {
     addMarkerPointLayer() {
       this.clearAllMarkerPoint();
       const self = this;
-      const pointArry = [
-        [40, 116],
-        [38, 115],
-        [30, 105],
-        [33, 98],
-        [23, 98],
-        [28, 100],
-        [29, 100],
-        [20, 80],
-        [40, 78],
-        [39, 77],
-        [39, 114],
-        [30, 117],
-        [29, 120],
-      ];
       let options = {
         type: "MarkerPointLayer", //图层类型
         style: "Icon", //样式类型
         zIndexOffset: 10,
       };
-      pointArry.forEach((el) => {
+      this.pointArry.forEach((el) => {
         options.x = el[1]; //经度
         options.y = el[0]; //纬度
         self.PointLayers.markerPointLayer(options);
@@ -115,54 +115,25 @@ export default {
     addCircleMarkerLayer() {
       this.clearAllMarkerPoint();
       const self = this;
-      const pointArry = [
-        [40, 116],
-        [38, 115],
-        [30, 105],
-        [33, 98],
-        [23, 98],
-        [28, 100],
-        [29, 100],
-        [20, 80],
-        [40, 78],
-        [39, 77],
-        [39, 114],
-        [30, 117],
-        [29, 120],
-      ];
       let options = {
         type: "CircleMarkerLayer", //图层类型
         style: "CircleMarker", //样式类型
       };
-      pointArry.forEach((el) => {
+      this.pointArry.forEach((el) => {
         options.x = el[1]; //经度
         options.y = el[0]; //纬度
         self.PointLayers.markerPointLayer(options);
       });
     },
+    //该功能的样式在public/css/index.css中 blinkMarker样式
     addblinkMarkerLayer() {
       this.clearAllMarkerPoint();
       const self = this;
-      const pointArry = [
-        [40, 116],
-        [38, 115],
-        [30, 105],
-        [33, 98],
-        [23, 98],
-        [28, 100],
-        [29, 100],
-        [20, 80],
-        [40, 78],
-        [39, 77],
-        [39, 114],
-        [30, 117],
-        [29, 120],
-      ];
       let options = {
         type: "MarkerPointLayer", //图层类型
         style: "blinkMarker", //样式类型
       };
-      pointArry.forEach((el) => {
+      this.pointArry.forEach((el) => {
         options.x = el[1]; //经度
         options.y = el[0]; //纬度
         self.PointLayers.markerPointLayer(options);

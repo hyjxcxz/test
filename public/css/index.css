@@ -3,6 +3,7 @@ body{
     height: 100%;
     margin: 0;
 }
+/* blinkMarker样式 start */
 .pulse-icon {
     display: inline-block;
     width: 15px;
@@ -47,3 +48,4 @@ body{
         filter: alpha(opacity=0);
     }
 }
+/* blinkMarker样式 end */

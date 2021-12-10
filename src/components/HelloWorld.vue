@@ -34,6 +34,7 @@
           主要介绍 GW-GIS 的入门用法包括 Leaflet 下载方式、GW-GIS 的下载途径、
           文件方式引入、模块化开发方式、打包配置说明等。
         </p>
+        <img src="../assets/img/guid.svg" />
       </div>
       <div class="hello-Introduction-item">
         <h3>API</h3>
@@ -44,6 +45,7 @@
           等，并给出 API 文档。services 模块，制定统一 规范配置文件命名为
           MapConfig.js，style 模块制定 mapStyleConfig.js。
         </p>
+        <img src="../assets/img/api.svg" />
       </div>
       <div class="hello-Introduction-item">
         <h3>示例</h3>
@@ -55,10 +57,12 @@
           点查询、高程剖面等仅 10 种操作示例，每个示例都有一一对应的注释。所开发
           的示例打包成.zip，以方便用户下载使用。
         </p>
+        <img src="../assets/img/example.svg" />
       </div>
       <div class="hello-Introduction-item">
         <h3>关于</h3>
         <p>GW_GIS的使用说明，用户反馈信息和问题解答，作者简介和联系方式</p>
+        <img src="../assets/img/about.svg" />
       </div>
     </div>
   </div>
@@ -135,8 +139,21 @@ export default {
   .hello-Introduction {
     // height: e("calc(100% - 624px)");
     .hello-Introduction-item {
-      width: 50%;
+      width: 40%;
       float: left;
+      padding-left: 10%;
+      h3 {
+        text-align: left;
+      }
+      p {
+        float: left;
+        width: 70%;
+        text-align: left;
+      }
+      img {
+        width: 30%;
+        height: 80px;
+      }
     }
   }
 }

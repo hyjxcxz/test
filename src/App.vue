@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav" class="nav">
       <div class="logo">
-        <img alt="Vue logo" src="./assets/img/logo.png" />
+        <img alt="Vue logo" src="./assets/img/logo.svg" />
         <span>&nbsp;&nbsp;&nbsp;GW-GIS</span>
       </div>
       <div class="menue">
@@ -45,6 +45,8 @@ body {
   padding: 0;
   height: 70px;
   line-height: 70px;
+  box-shadow: 10px 10px 5px #a4cffcbd;
+  border-bottom: 1px solid #d6dadca8;
   // border: 1px solid #00e0f9;
   .logo {
     width: 80%;
