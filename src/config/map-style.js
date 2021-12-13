@@ -1,4 +1,7 @@
-export function getLayerStyle(type) {
+export function getLayerStyle(opt) {
+  debugger
+  const type = opt.style
+  
   const iconSize = getIconSize(type);
   switch (type) {
     case "Icon":
@@ -33,13 +36,13 @@ export function getLayerStyle(type) {
         level: "3", //发散的重度
         speedTime: 2, //闪烁的速度
       };
-    case "901": // 外扩时内框样式
+    case "DivIcon": 
       return {
-        stroke: true,
-        color: "rgba(243,84,84,1)",
-        opacity: 1,
-        weight: 2,
-        fill: false,
+        type: type,
+        html: getHtml(opt.pointStyle),
+        className: "RectanglePoint-DivIcon",
+        iconSize: iconSize,
+        iconAnchor: [iconSize[0]/2 , iconSize[1]/2],
       };
     default:
       return {};
@@ -52,7 +55,16 @@ function getIconSize(type) {
       return (iconSize = [27, 33]);
     case "blinkMarker":
       return (iconSize = [12, 12]);
+    case "iconSize":
+      return (iconSize = [12, 12]);
     default:
       return iconSize;
   }
+}
+function getHtml(type) { 
+  switch (type) { 
+    case "RectanglePoint":
+      return "<div class="+type+" ></div>"
+  }
+  
 }

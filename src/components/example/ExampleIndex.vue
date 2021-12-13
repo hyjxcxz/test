@@ -65,7 +65,8 @@ export default {
           this.addCircleMarkerLayer();
           break;
         case "rectangle-point":
-          // this.clearLayers();
+          // this.addPoint();
+          this.addRectanglePoint();//其它形状都可以用样式控制
           break;
         case "heat-point":
           break;
@@ -138,6 +139,38 @@ export default {
         options.y = el[0]; //纬度
         self.PointLayers.markerPointLayer(options);
       });
+    },
+    addRectanglePoint(){
+      this.clearAllMarkerPoint();
+      const self = this;
+      let options = {
+        type: "MarkerPointLayer", //图层类型
+        style: "DivIcon", //样式类型
+        pointStyle:"RectanglePoint",
+        zIndexOffset: 10,
+      };
+      this.pointArry.forEach((el) => {
+        options.x = el[1]; //经度
+        options.y = el[0]; //纬度
+        self.PointLayers.markerPointLayer(options);
+      });
+    },
+    
+    addPoint() {
+      const Geomoptions = {
+        type: "GeomPoint",
+        x: 116,
+        y: 40,
+      };
+      const Geompoint = new L.GW.Geom.Point(Geomoptions);
+      console.log(Geompoint);
+      const Pixeloptions = {
+        type: "PixelPoint",
+        x: 200.1,
+        y: 300.6,
+      };
+      const Pixelpoint = new L.GW.Geom.Point(Pixeloptions);
+      console.log(Pixelpoint);
     },
   },
 };

@@ -10,14 +10,14 @@ export default class PointLayers {
     this._layerGroup.addTo(this._map);
   }
   markerPointLayer(opt) {
-    const styleoption = getLayerStyle(opt.style);
+    const styleoption = getLayerStyle(opt);
     const style = new L.GW.Style.MarkerStyle(styleoption);
     opt.icon = style;
     this._markerPointLayer = new L.GW.Layer.PointLayer(opt);
     this._markerPointLayer.addTo(this._layerGroup);
   }
   circleMarkerLayer(opt) {
-    const style = getLayerStyle(opt.style);
+    const style = getLayerStyle(opt);
     style.type = opt.type;
     this._circleMarkerLayer = new L.GW.Layer.PointLayer(style);
     this._circleMarkerLayer.addTo(this._layerGroup);
