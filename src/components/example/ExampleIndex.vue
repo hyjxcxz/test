@@ -20,7 +20,8 @@ import Examplemenudata from "@/assets/json/Example-menu.json";
 import MenuTree from "@/components/example/MenuTree.vue";
 import { Map } from "../../utils/map";
 import BaseLayer from "@/components/example/map/baseLayers/BaseLayers";
-import PointLayers from "@/components/example/layers/baseLayers/PointLayers";
+import Layers from "@/components/example/layers/Layer";
+
 export default {
   name: "ExampleIndex",
   components: {
@@ -66,12 +67,18 @@ export default {
           break;
         case "rectangle-point":
           // this.addPoint();
-          this.addRectanglePoint();//其它形状都可以用样式控制
+          this.addRectanglePoint(); //其它形状都可以用样式控制
+          break;
+        case "Measure-distance":
+          this.measureDistance();
           break;
         case "heat-point":
           break;
         case "twinkle-point":
           this.addblinkMarkerLayer();
+          break;
+        case "Ellipse":
+          this.addEllipseLayer();
           break;
         case "TileLayer":
           this.addTileLayer();
@@ -82,7 +89,7 @@ export default {
     initMap() {
       this.map = Map("map");
       this.BaseLayer = new BaseLayer(this.map);
-      this.PointLayers = new PointLayers(this.map);
+      this.Layers = new Layers(this.map);
     },
     clearLayers() {
       this.clearAllMarkerPoint();
@@ -107,11 +114,11 @@ export default {
       this.pointArry.forEach((el) => {
         options.x = el[1]; //经度
         options.y = el[0]; //纬度
-        self.PointLayers.markerPointLayer(options);
+        self.Layers.markerPointLayer(options);
       });
     },
     clearAllMarkerPoint() {
-      this.PointLayers.clearAllLayer();
+      this.Layers.clearAllLayer();
     },
     addCircleMarkerLayer() {
       this.clearAllMarkerPoint();
@@ -123,7 +130,7 @@ export default {
       this.pointArry.forEach((el) => {
         options.x = el[1]; //经度
         options.y = el[0]; //纬度
-        self.PointLayers.markerPointLayer(options);
+        self.Layers.markerPointLayer(options);
       });
     },
     //该功能的样式在public/css/index.css中 blinkMarker样式
@@ -137,25 +144,46 @@ export default {
       this.pointArry.forEach((el) => {
         options.x = el[1]; //经度
         options.y = el[0]; //纬度
-        self.PointLayers.markerPointLayer(options);
+        self.Layers.markerPointLayer(options);
       });
     },
-    addRectanglePoint(){
+    addRectanglePoint() {
       this.clearAllMarkerPoint();
       const self = this;
       let options = {
         type: "MarkerPointLayer", //图层类型
         style: "DivIcon", //样式类型
-        pointStyle:"RectanglePoint",
+        pointStyle: "RectanglePoint",
         zIndexOffset: 10,
       };
       this.pointArry.forEach((el) => {
         options.x = el[1]; //经度
         options.y = el[0]; //纬度
-        self.PointLayers.markerPointLayer(options);
+        self.Layers.markerPointLayer(options);
       });
     },
-    
+    addEllipseLayer() {
+      let options = {
+        type: "MarkerPointLayer", //图层类型
+        style: "Icon", //样式类型
+        zIndexOffset: 10,
+      };
+      options.x = 114.832339; //经度
+      options.y = 35.192793; //纬度
+      this.Layers.markerPointLayer(options);
+      const opt = {
+        x: 114.832339,
+        y: 35.192793,
+        semiMajor: 300,
+        semiMinor: 200,
+        tiltDegrees: 22.5,
+        style: "Ellipse",
+      };
+      this.Layers.ellipseLayer(opt);
+    },
+    measureDistance() {
+      this.Layers.measureDistance();
+    },
     addPoint() {
       const Geomoptions = {
         type: "GeomPoint",

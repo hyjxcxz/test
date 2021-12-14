@@ -1,7 +1,7 @@
 export function getLayerStyle(opt) {
-  debugger
-  const type = opt.style
-  
+  debugger;
+  const type = opt.style;
+
   const iconSize = getIconSize(type);
   switch (type) {
     case "Icon":
@@ -36,13 +36,22 @@ export function getLayerStyle(opt) {
         level: "3", //发散的重度
         speedTime: 2, //闪烁的速度
       };
-    case "DivIcon": 
+    case "DivIcon":
       return {
         type: type,
         html: getHtml(opt.pointStyle),
         className: "RectanglePoint-DivIcon",
         iconSize: iconSize,
-        iconAnchor: [iconSize[0]/2 , iconSize[1]/2],
+        iconAnchor: [iconSize[0] / 2, iconSize[1] / 2],
+      };
+    case "Ellipse":
+      return {
+        stroke: true,
+        color: "#F35454",
+        opacity: 0.5,
+        weight: 2,
+        fillColor: "#F35454",
+        fillOpacity: 0.3,
       };
     default:
       return {};
@@ -61,10 +70,9 @@ function getIconSize(type) {
       return iconSize;
   }
 }
-function getHtml(type) { 
-  switch (type) { 
+function getHtml(type) {
+  switch (type) {
     case "RectanglePoint":
-      return "<div class="+type+" ></div>"
+      return "<div class=" + type + " ></div>";
   }
-  
 }

@@ -1,0 +1,47 @@
+// import { getLayerStyle } from "@/config/map-style";
+import PointLayers from "./baseLayers/PointLayers";
+import PolygonLayers from "./baseLayers/PolygonLayers";
+import Measures from "./baseLayers/Measure";
+export default class Layers {
+  constructor(map) {
+    this._map = map;
+    this._layerGroup = null;
+    const layerGroup = this.LayerGroup();
+    this._layerGroup = layerGroup.layerGroup;
+    this._layerGroup.addTo(this._map);
+    this._PointLayers = new PointLayers(this._map);
+    this._PolygonLayers = new PolygonLayers(this._map);
+    this._Measures = new Measures(this._map);
+  }
+  markerPointLayer(opt) {
+    this._PointLayers.markerPointLayer(opt, this._layerGroup);
+  }
+  circleMarkerLayer(opt) {
+    this._PointLayers.circleMarkerLayer(opt, this._layerGroup);
+  }
+  ellipseLayer(opt) {
+    this._PolygonLayers.ellipseLayer(opt, this._layerGroup);
+  }
+  measureDistance() {
+    this._Measures.measureDistance();
+  }
+  clearPointLayer() {
+    this._PointLayers.clearPointLayer(this._layerGroup);
+    // this._layerGroup.removeLayer(this._markerPointLayer); //直接根据layer本身清除对应图层
+  }
+  clearLayerById(layerId) {
+    this._layerGroup.removeLayerById(layerId); //根据layerId清除对应图层
+  }
+  clearAllLayer() {
+    this._layerGroup.clearLayers();
+  }
+  /**
+   * @param {bool} visible true:显示；false：隐藏
+   */
+  setVisible(visible) {
+    this._layerGroup.visible(visible); //根据layerId清除对应图层
+  }
+  LayerGroup() {
+    return new L.GW.Layer.LayerGroup(this._map);
+  }
+}

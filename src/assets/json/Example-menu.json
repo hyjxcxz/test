@@ -62,6 +62,11 @@
                 "icon":"iconfont icon-big-circle"
             },
             {
+                "key":"Ellipse",
+                "title":"椭圆",
+                "icon":"iconfont icon-big-circle"
+            },
+            {
                 "key":"SVG",
                 "title":"SVG",
                 "icon":"iconfont icon-svg"
@@ -81,6 +86,23 @@
             {
                 "key":"TileLayer",
                 "title":"TileLayer"
+            }
+        ]
+    },
+    {
+        "key":"Measure",
+        "title":"测量",
+        "icon":"iconfont icon-xian",
+        "children":[
+            {
+                "key":"Measure-distance",
+                "title":"测量距离",
+                "icon":"iconfont icon-quyuchache"
+            },
+            {
+                "key":"Measure-area",
+                "title":"测量面积",
+                "icon":"iconfont icon-big-circle"
             }
         ]
     }
