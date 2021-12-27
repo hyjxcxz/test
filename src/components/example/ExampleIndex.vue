@@ -163,20 +163,20 @@ export default {
       });
     },
     addEllipseLayer() {
-      let options = {
-        type: "MarkerPointLayer", //图层类型
-        style: "Icon", //样式类型
-        zIndexOffset: 10,
-      };
-      options.x = 114.832339; //经度
-      options.y = 35.192793; //纬度
-      this.Layers.markerPointLayer(options);
+      // let options = {
+      //   type: "MarkerPointLayer", //图层类型
+      //   style: "Icon", //样式类型
+      //   zIndexOffset: 10,
+      // };
+      // options.x = 114.832339; //经度
+      // options.y = 35.192793; //纬度
+      // this.Layers.markerPointLayer(options);
       const opt = {
         x: 114.832339,
-        y: 35.192793,
+        y: 16.192793,
         semiMajor: 300,
-        semiMinor: 200,
-        tiltDegrees: 22.5,
+        semiMinor: 300,
+        tiltDegrees: 0,
         style: "Ellipse",
       };
       this.Layers.ellipseLayer(opt);

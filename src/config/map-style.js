@@ -1,5 +1,4 @@
 export function getLayerStyle(opt) {
-  debugger;
   const type = opt.style;
 
   const iconSize = getIconSize(type);

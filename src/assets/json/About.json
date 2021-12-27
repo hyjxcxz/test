@@ -1,0 +1,17 @@
+[
+    {
+        "key":"description",
+        "title":"产品说明",
+        "icon":"iconfont icon-mapNew"
+    },
+    {
+        "key":"question",
+        "title":"问题反馈",
+        "icon":"iconfont icon-mapNew"
+    },
+    {
+        "key":"author",
+        "title":"作者简介",
+        "icon":"iconfont icon-mapNew"
+    }
+]
