@@ -35,7 +35,7 @@ const BaseLayers = [
         layerConfig: {
           type: "Inner",
           category: "Annotion",
-          url: "TianDiTuWMTS4326.Satellite.Annotion",
+          url: "TianDiTuWMTS.Satellite.Annotion",
           options: {
             token: "2d02a4bf00cfa355abc3f7f7850dfcc7",
           },
@@ -59,8 +59,7 @@ const BaseLayers = [
       {
         layerConfig: {
           type: "Inner",
-          category: "Annotion",
-          url: "TianDiTuWMTS4326.Normal.Annotion",
+          url: "TianDiTuWMTS.Normal.Map",
           options: {
             token: "2d02a4bf00cfa355abc3f7f7850dfcc7",
           },
@@ -69,7 +68,8 @@ const BaseLayers = [
       {
         layerConfig: {
           type: "Inner",
-          url: "TianDiTuWMTS4326.Normal.Map",
+          category: "Annotion",
+          url: "TianDiTuWMTS.Normal.Annotion",
           options: {
             token: "2d02a4bf00cfa355abc3f7f7850dfcc7",
           },
@@ -85,7 +85,7 @@ const BaseLayers = [
         layerConfig: {
           type: "Inner",
           category: "Annotion",
-          url: "TianDiTuWMTS4326.Terrain.Annotion",
+          url: "TianDiTuWMTS.Terrain.Annotion",
           options: {
             token: "2d02a4bf00cfa355abc3f7f7850dfcc7",
           },
@@ -94,7 +94,7 @@ const BaseLayers = [
       {
         layerConfig: {
           type: "Inner",
-          url: "TianDiTuWMTS4326.Terrain.Map",
+          url: "TianDiTuWMTS.Terrain.Map",
           options: {
             token: "2d02a4bf00cfa355abc3f7f7850dfcc7",
           },
