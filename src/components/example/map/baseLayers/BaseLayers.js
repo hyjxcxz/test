@@ -2,15 +2,22 @@ import { getBaseLayers } from "@/config/map-config";
 export default class BaseLayer {
   constructor(map) {
     this._map = map;
-    this._featureGroup = null;
+    this._featureGroup = this.FeatureLayer().featureGroup;
+    this._featureGroup.addTo(this._map);
     this._TileLayer = null;
   }
+  addBaseLayer(layers) {
+    layers.forEach((element) => {
+      const layer = L.GW.Layer.MapServerLayer.MapServerLayer(element);
+      this.addLayer(layer);
+    });
+  }
+  addLayer(layer) {
+    this._featureGroup.addLayer(layer);
+  }
   TileLayer() {
-    const FeatureLayer = this.FeatureLayer();
-    this._featureGroup = FeatureLayer.featureGroup;
-    this._featureGroup.addTo(this._map);
     this._TileLayer = new L.GW.Layer.TileLayer(getBaseLayers()[0]);
-    this._featureGroup.addLayer(this._TileLayer);
+    this.addLayer(this._TileLayer);
   }
   clearTileLayer() {
     if (this._featureGroup && this._TileLayer) {

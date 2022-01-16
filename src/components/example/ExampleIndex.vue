@@ -21,6 +21,7 @@ import MenuTree from "@/components/example/MenuTree.vue";
 import { Map } from "../../utils/map";
 import BaseLayer from "@/components/example/map/baseLayers/BaseLayers";
 import Layers from "@/components/example/layers/Layer";
+import { getBaseLayers } from "@/config/map-config";
 
 export default {
   name: "ExampleIndex",
@@ -50,6 +51,7 @@ export default {
   },
   mounted() {
     this.initMap();
+    this.addBaseLayer();
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -94,6 +96,11 @@ export default {
     clearLayers() {
       this.clearAllMarkerPoint();
       // this.clearTileLayer();
+    },
+    addBaseLayer() {
+      debugger;
+      const layers = getBaseLayers()[2].layers;
+      this.BaseLayer.addBaseLayer(layers);
     },
     addTileLayer() {
       this.clearTileLayer();

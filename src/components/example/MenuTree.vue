@@ -1,7 +1,12 @@
 <template>
   <div>
     <template v-for="menu in menuData">
-     <el-menu-item class="menu-item" v-if="!menu.children" :key="menu.key" :index="menu.key">
+      <el-menu-item
+        class="menu-item"
+        v-if="!menu.children"
+        :key="menu.key"
+        :index="menu.key"
+      >
         <i :class="menu.icon"></i>
         <span slot="title">{{ menu.title }}</span>
       </el-menu-item>

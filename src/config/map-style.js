@@ -31,7 +31,7 @@ export function getLayerStyle(opt) {
         type: type,
         color: "#ff0000",
         iconSize: iconSize,
-        diveColor: "#ffffff",
+        diveColor: "#0024fd",
         level: "3", //发散的重度
         speedTime: 2, //闪烁的速度
       };
