@@ -2,6 +2,7 @@
 import PointLayers from "./baseLayers/PointLayers";
 import PolygonLayers from "./baseLayers/PolygonLayers";
 import Measures from "./baseLayers/Measure";
+import BufferLayer from "./baseLayers/BufferLayer";
 export default class Layers {
   constructor(map) {
     this._map = map;
@@ -12,6 +13,7 @@ export default class Layers {
     this._PointLayers = new PointLayers(this._map);
     this._PolygonLayers = new PolygonLayers(this._map);
     this._Measures = new Measures(this._map);
+    this._BufferLayer = new BufferLayer(this._map);
   }
   markerPointLayer(opt) {
     this._PointLayers.markerPointLayer(opt, this._layerGroup);
@@ -24,6 +26,9 @@ export default class Layers {
   }
   measureDistance() {
     this._Measures.measureDistance();
+  }
+  pointBuffer(opt) {
+    this._BufferLayer.bufferLayer(opt, this._layerGroup);
   }
   clearPointLayer() {
     this._PointLayers.clearPointLayer(this._layerGroup);

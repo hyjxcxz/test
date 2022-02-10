@@ -8,7 +8,7 @@ export default class BaseLayer {
   }
   addBaseLayer(layers) {
     layers.forEach((element) => {
-      const layer = L.GW.Layer.MapServerLayer.MapServerLayer(element);
+      const layer = L.GW.Layer.MapServerLayer(element);
       this.addLayer(layer);
     });
   }

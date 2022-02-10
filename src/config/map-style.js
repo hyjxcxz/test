@@ -52,6 +52,15 @@ export function getLayerStyle(opt) {
         fillColor: "#F35454",
         fillOpacity: 0.3,
       };
+    case "Polygon":
+      return {
+        stroke: true,
+        color: "#F35454",
+        opacity: 0.5,
+        weight: 2,
+        fillColor: "#F35454",
+        fillOpacity: 0.3,
+      };
     default:
       return {};
   }

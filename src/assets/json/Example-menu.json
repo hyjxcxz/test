@@ -79,6 +79,25 @@
         ]
     },
     {
+        "key":"buffer",
+        "title":"缓冲区",
+        "icon":"iconfont icon-map",
+        "children":[
+            {
+                "key":"PointBuffer",
+                "title":"点缓冲区"
+            },
+            {
+                "key":"LineBuffer",
+                "title":"线缓冲区"
+            },
+            {
+                "key":"PolygonBuffer",
+                "title":"面缓冲区"
+            }
+        ]
+    },
+    {
         "key":"services",
         "title":"地图服务",
         "icon":"iconfont icon-map",

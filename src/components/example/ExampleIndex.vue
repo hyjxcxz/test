@@ -56,7 +56,7 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
-      // this.clearLayers();
+      this.clearLayers();
       switch (key) {
         case "map":
           this.addTileLayer();
@@ -82,6 +82,15 @@ export default {
         case "Ellipse":
           this.addEllipseLayer();
           break;
+        case "PointBuffer":
+          this.addPointBuffer();
+          break;
+        case "LineBuffer":
+          this.addLineBuffer();
+          break;
+        case "PolygonBuffer":
+          this.addPolygonBuffer();
+          break;
         case "TileLayer":
           this.addTileLayer();
           break;
@@ -98,7 +107,6 @@ export default {
       // this.clearTileLayer();
     },
     addBaseLayer() {
-      debugger;
       const layers = getBaseLayers()[2].layers;
       this.BaseLayer.addBaseLayer(layers);
     },
@@ -170,14 +178,14 @@ export default {
       });
     },
     addEllipseLayer() {
-      // let options = {
-      //   type: "MarkerPointLayer", //图层类型
-      //   style: "Icon", //样式类型
-      //   zIndexOffset: 10,
-      // };
-      // options.x = 114.832339; //经度
-      // options.y = 35.192793; //纬度
-      // this.Layers.markerPointLayer(options);
+      let options = {
+        type: "MarkerPointLayer", //图层类型
+        style: "Icon", //样式类型
+        zIndexOffset: 10,
+      };
+      options.x = 114.832339; //经度
+      options.y = 35.192793; //纬度
+      this.Layers.markerPointLayer(options);
       const opt = {
         x: 114.832339,
         y: 16.192793,
@@ -206,6 +214,22 @@ export default {
       };
       const Pixelpoint = new L.GW.Geom.Point(Pixeloptions);
       console.log(Pixelpoint);
+    },
+    addPointBuffer() {
+      const pointGeojson =
+        L.GW.Util.geojsonUtil.terraformWKTtoGeoJson("POINT(116 40)");
+      const options = {
+        type: "point",
+        geojson: pointGeojson,
+        radius: 500,
+        // units:'m',
+        steps: 360,
+        centerStyle: {
+          style: "Icon", //样式类型
+        },
+        bufferStyle: { style: "Polygon" },
+      };
+      this.Layers.pointBuffer(options);
     },
   },
 };
