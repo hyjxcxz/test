@@ -14,9 +14,9 @@ export default {
 <style scoped>
 .example {
   /* height: calc(100% - 126px); */
-  height: calc(100% - 70px);
+  height: calc(100% - 72px);
 }
-.footer {
+/* .footer {
   display: none;
-}
+} */
 </style>

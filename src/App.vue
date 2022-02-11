@@ -14,14 +14,14 @@
       </div>
     </div>
     <router-view />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 <script>
-import Footer from "@/components/Footer.vue";
+// import Footer from "@/components/Footer.vue";
 export default {
   components: {
-    Footer,
+    // Footer,
   },
 };
 </script>

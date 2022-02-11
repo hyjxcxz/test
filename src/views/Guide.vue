@@ -22,9 +22,9 @@ export default {
 
 <style scoped>
 .guide {
-  height: calc(100% - 70px);
+  height: calc(100% - 72px);
 }
-.footer {
+/* .footer {
   display: none;
-}
+} */
 </style>
