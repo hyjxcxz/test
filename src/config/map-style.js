@@ -61,6 +61,15 @@ export function getLayerStyle(opt) {
         fillColor: "#F35454",
         fillOpacity: 0.3,
       };
+    case "Polyline":
+      return {
+        stroke: true,
+        color: "#0018fa",
+        opacity: 0.5,
+        weight: 2,
+        fillColor: "#F35454",
+        fillOpacity: 0.3,
+      };
     default:
       return {};
   }

@@ -229,7 +229,41 @@ export default {
         },
         bufferStyle: { style: "Polygon" },
       };
-      this.Layers.pointBuffer(options);
+      this.Layers.addBuffer(options);
+    },
+    addLineBuffer() {
+      const pointGeojson = L.GW.Util.geojsonUtil.terraformWKTtoGeoJson(
+        "LINESTRING(112 40,113 40,114 39)"
+      );
+      const options = {
+        type: "line",
+        geojson: pointGeojson,
+        radius: 50,
+        // units:'m',
+        steps: 360,
+        centerStyle: {
+          style: "Polyline", //样式类型
+        },
+        bufferStyle: { style: "Polygon" },
+      };
+      this.Layers.addBuffer(options);
+    },
+    addPolygonBuffer() {
+      const pointGeojson = L.GW.Util.geojsonUtil.terraformWKTtoGeoJson(
+        "POLYGON((116 40,115 40,115 39,116 39,116 40))"
+      );
+      const options = {
+        type: "polygon",
+        geojson: pointGeojson,
+        radius: 50,
+        // units:'m',
+        steps: 360,
+        centerStyle: {
+          style: "Polygon", //样式类型
+        },
+        bufferStyle: { style: "Polygon" },
+      };
+      this.Layers.addBuffer(options);
     },
   },
 };

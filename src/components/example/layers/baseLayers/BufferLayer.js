@@ -14,8 +14,10 @@ export default class BufferLayer {
         this.getCenterPoint(opt, layerGroup);
         break;
       case "line":
+        this.getCenterLine(opt, layerGroup);
         break;
       case "polygon":
+        this.getCenterPolygon(opt, layerGroup);
         break;
     }
   }
@@ -25,6 +27,24 @@ export default class BufferLayer {
     const options = {
       geojson: opt.geojson,
       pointStyle: style,
+    };
+    this._GeoJSONLayer.geoJSONLayer(options, layerGroup);
+  }
+  getCenterLine(opt, layerGroup) {
+    const styleoption = getLayerStyle(opt.centerStyle);
+    const style = new L.GW.Style.MarkerStyle(styleoption);
+    const options = {
+      geojson: opt.geojson,
+      style: style,
+    };
+    this._GeoJSONLayer.geoJSONLayer(options, layerGroup);
+  }
+  getCenterPolygon(opt, layerGroup) {
+    const styleoption = getLayerStyle(opt.centerStyle);
+    const style = new L.GW.Style.MarkerStyle(styleoption);
+    const options = {
+      geojson: opt.geojson,
+      style: style,
     };
     this._GeoJSONLayer.geoJSONLayer(options, layerGroup);
   }

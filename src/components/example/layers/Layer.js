@@ -27,7 +27,7 @@ export default class Layers {
   measureDistance() {
     this._Measures.measureDistance();
   }
-  pointBuffer(opt) {
+  addBuffer(opt) {
     this._BufferLayer.bufferLayer(opt, this._layerGroup);
   }
   clearPointLayer() {
