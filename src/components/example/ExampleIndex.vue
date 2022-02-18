@@ -59,7 +59,7 @@ export default {
       this.clearLayers();
       switch (key) {
         case "map":
-          this.addTileLayer();
+          this.addBaseLayer();
           break;
         case "marker-point":
           this.addMarkerPointLayer();

@@ -102,4 +102,29 @@ const BaseLayers = [
       },
     ],
   },
+  {
+    label: "天地图影像",
+    image: "./images/layer-tdt-ter.png",
+    layers: [
+      {
+        layerConfig: {
+          type: "Inner",
+          category: "Annotion",
+          url: "TianDiTuWMTS.Satellite.Annotion",
+          options: {
+            token: "2d02a4bf00cfa355abc3f7f7850dfcc7",
+          },
+        },
+      },
+      {
+        layerConfig: {
+          type: "Inner",
+          url: "TianDiTuWMTS.Satellite.Map",
+          options: {
+            token: "2d02a4bf00cfa355abc3f7f7850dfcc7",
+          },
+        },
+      },
+    ],
+  },
 ];
