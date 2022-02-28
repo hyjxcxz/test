@@ -79,6 +79,9 @@ export default {
         case "twinkle-point":
           this.addblinkMarkerLayer();
           break;
+        case "Circle":
+          this.addCircleLayer();
+          break;
         case "Ellipse":
           this.addEllipseLayer();
           break;
@@ -188,13 +191,22 @@ export default {
       this.Layers.markerPointLayer(options);
       const opt = {
         x: 114.832339,
-        y: 16.192793,
+        y: 35.192793,
         semiMajor: 300,
-        semiMinor: 300,
+        semiMinor: 200,
         tiltDegrees: 0,
         style: "Ellipse",
       };
       this.Layers.ellipseLayer(opt);
+    },
+    addCircleLayer() {
+      const opt = {
+        x: 114.832339,
+        y: 35.192793,
+        radius: 300,
+        style: "Circle",
+      };
+      this.Layers.circleLayer(opt);
     },
     measureDistance() {
       this.Layers.measureDistance();

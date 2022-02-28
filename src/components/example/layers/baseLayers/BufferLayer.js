@@ -49,7 +49,7 @@ export default class BufferLayer {
     this._GeoJSONLayer.geoJSONLayer(options, layerGroup);
   }
   getBuffer(opt, layerGroup) {
-    const buffer = new L.GW.Layer.BufferLayer(opt);
+    const buffer = new L.GW.Geom.Buffer(opt);
     const style = getLayerStyle(opt.bufferStyle);
     const options = {
       geojson: buffer,

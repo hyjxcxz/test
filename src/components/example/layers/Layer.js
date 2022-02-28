@@ -24,6 +24,9 @@ export default class Layers {
   ellipseLayer(opt) {
     this._PolygonLayers.ellipseLayer(opt, this._layerGroup);
   }
+  circleLayer(opt) {
+    this._PolygonLayers.circleLayer(opt, this._layerGroup);
+  }
   measureDistance() {
     this._Measures.measureDistance();
   }

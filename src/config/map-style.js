@@ -52,6 +52,16 @@ export function getLayerStyle(opt) {
         fillColor: "#F35454",
         fillOpacity: 0.3,
       };
+    case "Circle":
+      return {
+        stroke: true,
+        strokeColor: "#F35454",
+        strokeOpacity: 0.5,
+        strokeweight: 2,
+        fillColor: "#F35454",
+        fillOpacity: 0.3,
+        dashArray: "10,5", //表示：虚线长10，间距5，然后重复 虚线长10，间距5;dasharray = '20, 10, 5' 表示：虚线长20，间距10，虚线长5，接着是间距20，虚线10，间距5，之后开始如此循环
+      };
     case "Polygon":
       return {
         stroke: true,
