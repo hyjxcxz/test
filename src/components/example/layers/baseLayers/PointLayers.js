@@ -3,6 +3,7 @@ export default class PointLayers {
   constructor(map) {
     this._map = map;
     this._markerPointLayer = null;
+    this._HeatLayer = null;
     this._circleMarkerLayer = null;
   }
   markerPointLayer(opt, layerGroup) {
@@ -11,6 +12,10 @@ export default class PointLayers {
     opt.icon = style;
     this._markerPointLayer = new L.GW.Layer.PointLayer(opt);
     this._markerPointLayer.addTo(layerGroup);
+  }
+  heatLayer(opt, layerGroup) {
+    this._HeatLayer = new L.GW.Layer.HeatLayer(opt);
+    this._HeatLayer.addTo(layerGroup);
   }
   circleMarkerLayer(opt, layerGroup) {
     const style = getLayerStyle(opt);

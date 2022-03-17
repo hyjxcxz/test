@@ -12,21 +12,33 @@
         <menu-tree :menuData="data"></menu-tree>
       </el-menu>
     </div>
+    <tracks></tracks>
     <div id="map" class="example-content-instruction"></div>
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 import Examplemenudata from "@/assets/json/Example-menu.json";
+import heatArry from "@/assets/json/heatArry.json";
 import MenuTree from "@/components/example/MenuTree.vue";
 import { Map } from "../../utils/map";
 import BaseLayer from "@/components/example/map/baseLayers/BaseLayers";
 import Layers from "@/components/example/layers/Layer";
 import { getBaseLayers } from "@/config/map-config";
+import tracks from "./components/track.vue";
 
 export default {
   name: "ExampleIndex",
   components: {
     MenuTree,
+    tracks,
+  },
+  computed: {
+    ...mapState({
+      showTrackPanel: function (state) {
+        return state.showTrackPanel;
+      },
+    }),
   },
   data() {
     return {
@@ -75,6 +87,7 @@ export default {
           this.measureDistance();
           break;
         case "heat-point":
+          this.addHeatLayer();
           break;
         case "twinkle-point":
           this.addblinkMarkerLayer();
@@ -96,6 +109,9 @@ export default {
           break;
         case "TileLayer":
           this.addTileLayer();
+          break;
+        case "trackLine":
+          this.addtrackLine();
           break;
       }
     },
@@ -276,6 +292,98 @@ export default {
         bufferStyle: { style: "Polygon" },
       };
       this.Layers.addBuffer(options);
+    },
+    addtrackLine() {
+      // this.$store.commit("showTrackPanel", true);
+      const opt = {
+        id: "1",
+        name: "test",
+        speed: 100,
+        startColor: "#45f82a",
+        endColor: "#ff7b00",
+        middelColor: "#e4e7ed",
+        mutiySymbole: {
+          type: "shipManageMutiy",
+          riseOnHover: true,
+          draggable: false,
+          zIndexOffset: 100,
+          html: "",
+          iconSize: [14, 14],
+          iconAnchor: [7, 7],
+          className: "mutiy",
+        },
+        singleSymbole: {
+          type: "currentshipManage",
+          riseOnHover: true,
+          draggable: false,
+          zIndexOffset: 100,
+          html: "",
+          iconSize: [14, 14],
+          iconAnchor: [7, 7],
+          className: "single",
+        },
+        routeSymbol: {
+          weight: 2,
+          color: "#5494f7",
+          dashArray: "15",
+        },
+        realRouteSymbol: {
+          weight: 8,
+          color: "#5494f7",
+        },
+        arrowHead: {
+          repeat: 100,
+          pixelSize: 15,
+          headAngle: 75,
+          polygon: false,
+          pathOptions: {
+            stroke: true,
+            weight: 6,
+            color: "#5494f7",
+          },
+        },
+        map: this.map,
+        trackData: [
+          { lat: 39.898457, lng: 116.391844 },
+          { lat: 39.898595, lng: 116.377947 },
+          { lat: 39.898341, lng: 116.368001 },
+          { lat: 39.898063, lng: 116.357144 },
+          { lat: 39.899095, lng: 116.351934 },
+          { lat: 39.905871, lng: 116.35067 },
+          { lat: 39.922329, lng: 116.3498 },
+          { lat: 39.931017, lng: 116.349671 },
+          { lat: 39.939104, lng: 116.349225 },
+          { lat: 39.942233, lng: 116.34991 },
+          { lat: 39.947263, lng: 116.366892 },
+          { lat: 39.947568, lng: 116.387537 },
+          { lat: 39.947764, lng: 116.401988 },
+          { lat: 39.947929, lng: 116.410824 },
+          { lat: 39.947558, lng: 116.42674 },
+          { lat: 39.9397, lng: 116.427338 },
+          { lat: 39.932404, lng: 116.427919 },
+          { lat: 39.923109, lng: 116.428377 },
+          { lat: 39.907094, lng: 116.429583 },
+          { lat: 39.906858, lng: 116.41404 },
+          { lat: 39.906622, lng: 116.405321 },
+          { lat: 39.906324, lng: 116.394954 },
+          { lat: 39.906308, lng: 116.391264 },
+          { lat: 39.916611, lng: 116.390748 },
+        ],
+      };
+      this.Layers.addtrackLine(opt);
+    },
+    addHeatLayer() {
+      const opt = {
+        HeatArry: heatArry,
+        radius: 25,
+        // gradient: this.options.gradient,
+        // max: this.options.max,
+        // maxZoom: this.options.maxZoom,
+        // minOpacity: this.options.minOpacity,
+        // blur: this.options.blur,
+      };
+      this.map.setView([37.87, 116.475], 16);
+      this.Layers.addHeatLayer(opt);
     },
   },
 };

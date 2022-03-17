@@ -44,7 +44,14 @@
     {
         "key":"Polyline",
         "title":"线",
-        "icon":"iconfont icon-xian"
+        "icon":"iconfont icon-xian",
+        "children":[
+            {
+                "key":"trackLine",
+                "title":"轨迹回放",
+                "icon":"iconfont icon-quyuchache"
+            }
+        ]
     },
     {
         "key":"Polygon",
