@@ -40,7 +40,9 @@ body {
   color: #2c3e50;
   height: 100%;
 }
-
+ ::-webkit-scrollbar {
+      display: none;
+   }
 #nav {
   padding: 0;
   height: 70px;
@@ -49,7 +51,7 @@ body {
   border-bottom: 1px solid #d6dadca8;
   // border: 1px solid #00e0f9;
   .logo {
-    width: 80%;
+    width: 50%;
     float: left;
     img {
       float: left;
@@ -63,8 +65,9 @@ body {
     }
   }
   .menue {
-    width: 20%;
+    width: 50%;
     float: right;
+    text-align: right;
   }
   a {
     font-weight: bold;
