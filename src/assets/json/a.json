@@ -33,6 +33,11 @@
                 "key":"twinkle-point",
                 "title":"闪烁点",
                 "icon":"iconfont icon-yanjizhushou-shangchuan_shanguangdeng"
+            },
+            {
+                "key":"culster-point",
+                "title":"聚合",
+                "icon":"iconfont icon-juhejiedian"
             }
         ]
     },
@@ -54,6 +59,11 @@
         "icon":"iconfont icon-mianjiicon",
         "children":[
             {
+                "key":"Rectangle",
+                "title":"矩形",
+                "icon":"iconfont icon-quyuchache"
+            },
+            {
                 "key":"Circle",
                 "title":"圆",
                 "icon":"iconfont icon-big-circle"
@@ -62,6 +72,16 @@
                 "key":"Ellipse",
                 "title":"椭圆",
                 "icon":"iconfont icon-big-circle"
+            },
+            {
+                "key":"SVG",
+                "title":"SVG",
+                "icon":"iconfont icon-svg"
+            },
+            {
+                "key":"Canvas",
+                "title":"Canvas",
+                "icon":"iconfont icon-canvas"
             }
         ]
     },
@@ -106,9 +126,9 @@
                 "icon":"iconfont icon-quyuchache"
             },
             {
-                "key":"Measure-All",
-                "title":"测量距离/面积",
-                "icon":"iconfont icon-quyuchache"
+                "key":"Measure-area",
+                "title":"测量面积",
+                "icon":"iconfont icon-big-circle"
             }
         ]
     }

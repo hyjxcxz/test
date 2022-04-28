@@ -30,7 +30,7 @@ export default class Layers {
     this._PolygonLayers.circleLayer(opt, this._layerGroup);
   }
   measureDistance() {
-    this._Measures.measureDistance();
+    this._Measures.measureDistance(this._map);
   }
   addBuffer(opt) {
     this._BufferLayer.bufferLayer(opt, this._layerGroup);
@@ -50,6 +50,7 @@ export default class Layers {
   }
   clearAllLayer() {
     this._layerGroup.clearLayers();
+    this._TrackLineLayer.removeTrack();
   }
   /**
    * @param {bool} visible true:显示；false：隐藏

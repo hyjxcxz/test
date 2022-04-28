@@ -7,7 +7,6 @@ export default class BufferLayer {
     this._GeoJSONLayer = new GeoJSONLayer(this._map);
   }
   bufferLayer(opt, layerGroup) {
-    this.getBuffer(opt, layerGroup);
     const type = opt.type;
     switch (type) {
       case "point":
@@ -20,6 +19,7 @@ export default class BufferLayer {
         this.getCenterPolygon(opt, layerGroup);
         break;
     }
+    this.getBuffer(opt, layerGroup);
   }
   getCenterPoint(opt, layerGroup) {
     const styleoption = getLayerStyle(opt.centerStyle);

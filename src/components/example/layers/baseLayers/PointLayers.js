@@ -12,6 +12,7 @@ export default class PointLayers {
     opt.icon = style;
     this._markerPointLayer = new L.GW.Layer.PointLayer(opt);
     this._markerPointLayer.addTo(layerGroup);
+    // this.zoom(this._markerPointLayer)
   }
   heatLayer(opt, layerGroup) {
     this._HeatLayer = new L.GW.Layer.HeatLayer(opt);
@@ -22,8 +23,12 @@ export default class PointLayers {
     style.type = opt.type;
     this._circleMarkerLayer = new L.GW.Layer.PointLayer(style);
     this._circleMarkerLayer.addTo(layerGroup);
+    // this.zoom()
   }
   clearPointLayer() {
     this._layerGroup.removeLayer(this._markerPointLayer); //直接根据layer本身清除对应图层
   }
+  // zoom() {
+  //   this._map.setView([35.5636, 103.3886], 4);
+  // }
 }

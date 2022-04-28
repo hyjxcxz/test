@@ -26,6 +26,8 @@ import BaseLayer from "@/components/example/map/baseLayers/BaseLayers";
 import Layers from "@/components/example/layers/Layer";
 import { getBaseLayers } from "@/config/map-config";
 import tracks from "./components/track.vue";
+// import MeasureControl from "../../config/measure-control";
+// import PolylineMeasureControl from "../../config/polyline-measure-control";
 
 export default {
   name: "ExampleIndex",
@@ -43,6 +45,7 @@ export default {
   data() {
     return {
       data: Examplemenudata,
+      MeasureControl: null,
       map: null,
       pointArry: [
         [40, 116],
@@ -85,6 +88,9 @@ export default {
           break;
         case "Measure-distance":
           this.measureDistance();
+          break;
+        case "Measure-All":
+          this.measureAll();
           break;
         case "heat-point":
           this.addHeatLayer();
@@ -150,6 +156,7 @@ export default {
         options.y = el[0]; //纬度
         self.Layers.markerPointLayer(options);
       });
+      this.map.setView([35.5636, 103.3886], 4);
     },
     clearAllMarkerPoint() {
       this.Layers.clearAllLayer();
@@ -166,6 +173,7 @@ export default {
         options.y = el[0]; //纬度
         self.Layers.markerPointLayer(options);
       });
+      this.map.setView([35.5636, 103.3886], 4);
     },
     //该功能的样式在public/css/index.css中 blinkMarker样式
     addblinkMarkerLayer() {
@@ -180,6 +188,7 @@ export default {
         options.y = el[0]; //纬度
         self.Layers.markerPointLayer(options);
       });
+      this.map.setView([35.5636, 103.3886], 4);
     },
     addRectanglePoint() {
       this.clearAllMarkerPoint();
@@ -195,6 +204,7 @@ export default {
         options.y = el[0]; //纬度
         self.Layers.markerPointLayer(options);
       });
+      this.map.setView([35.5636, 103.3886], 4);
     },
     addEllipseLayer() {
       let options = {
@@ -226,6 +236,55 @@ export default {
     },
     measureDistance() {
       this.Layers.measureDistance();
+    },
+    // measureDistance() {
+    //   this.Layers.measureDistance();
+    // },
+    measureAll() {
+      // const option = {
+      //   layout: [true, false, false], //Layout[0]：激活一次可添加要素个数，true:可添加多个，false：只可添加1个；Layout[1]：激活按钮是否为激活状态（激活一次只可添加一个要素时才会给是否要改变激活按钮的选中状态，可添加多个要素时，按钮不允许失活，需要手动触发）；true:激活状态，false：失活状态；Layout[2]：添加量测完成后是否要清除量测图层，true：清除，false：不清
+      //   polylineOptions: {
+      //     color: "#F54124",
+      //     weight: 3,
+      //     opacity: 0.8,
+      //     fill: false,
+      //     clickable: true,
+      //     showMeasurements: true,
+      //     // measurementOptions: { imperial: true },
+      //   },
+      //   polygonOption: {
+      //     color: "#ffe502",
+      //     weight: 3,
+      //     opacity: 0.8,
+      //     fill: true,
+      //     fillColor: "#ffe502",
+      //     fillOpacity: 0.2,
+      //     clickable: true,
+      //     showMeasurements: true,
+      //     // measurementOptions: { imperial: true },
+      //   },
+      //   temPolylineOptions: {
+      //     color: "#F54124",
+      //     dashArray: 10,
+      //     weight: 2,
+      //     opacity: 0.8,
+      //     fill: false,
+      //     clickable: true,
+      //     showMeasurements: true,
+      //     // measurementOptions: { imperial: true },
+      //   },
+      // };
+      // if (!this.MeasureControl) {
+      //   this.MeasureControl = new MeasureControl(
+      //     this.map,
+      //     { layout: [true, false, false] },
+      //     (layer, geojson) => {
+      //       debugger;
+      //       console.log(geojson);
+      //     }
+      //   );
+      // }
+      // this.MeasureControl.active();
     },
     addPoint() {
       const Geomoptions = {
@@ -299,6 +358,7 @@ export default {
         id: "1",
         name: "test",
         speed: 100,
+        runicon: `/imgs/layerimg/icon_point.png`,
         startColor: "#45f82a",
         endColor: "#ff7b00",
         middelColor: "#e4e7ed",

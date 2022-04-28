@@ -4,15 +4,19 @@ import router from "./router";
 import store from "./store";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-// import L from 'leaflet'
-// import "leaflet/dist/leaflet.css"
+import * as L from "@goldwind/leaflet";
+import "leaflet/dist/leaflet.css";
 // import LeafletDraw from 'leaflet-draw'
-// import 'leaflet-draw/dist/leaflet.draw.css'
+import "leaflet-draw/dist/leaflet.draw.css";
 // require('../vendors/l.ellipse')
+// import 'leaflet-measure-path/leaflet-measure-path'
+// import 'leaflet-measure-path/leaflet-measure-path.css'
+// import  'leaflet-editable/src/Leaflet.Editable'
+// import 'leaflet.path.drag/src/Path.Drag'
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
-// Vue.L=L
+Vue.L = L;
 
 new Vue({
   router,

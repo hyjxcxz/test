@@ -29,7 +29,7 @@ export function getLayerStyle(opt) {
     case "blinkMarker": // 绘制的线段样式端点样式
       return {
         type: type,
-        color: "#ff0000",
+        color: "#ff0000", //点位颜色
         iconSize: iconSize,
         diveColor: "#0024fd",
         level: "3", //发散的重度

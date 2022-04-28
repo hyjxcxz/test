@@ -21,11 +21,11 @@
     </div>
     <p class="hello-download">
       GW-GIS 1.0
-      <a
+      <!-- <a
         href="../vendors/goldwind.leaflet.min.js"
         download="goldwind.leaflet.min.js"
-        >下载</a
-      >
+        >下载</a -->
+      <a>具体使用请联系作者</a>
     </p>
     <div class="hello-Introduction">
       <div class="hello-Introduction-item">
