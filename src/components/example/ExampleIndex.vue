@@ -241,39 +241,39 @@ export default {
     //   this.Layers.measureDistance();
     // },
     measureAll() {
-      // const option = {
-      //   layout: [true, false, false], //Layout[0]：激活一次可添加要素个数，true:可添加多个，false：只可添加1个；Layout[1]：激活按钮是否为激活状态（激活一次只可添加一个要素时才会给是否要改变激活按钮的选中状态，可添加多个要素时，按钮不允许失活，需要手动触发）；true:激活状态，false：失活状态；Layout[2]：添加量测完成后是否要清除量测图层，true：清除，false：不清
-      //   polylineOptions: {
-      //     color: "#F54124",
-      //     weight: 3,
-      //     opacity: 0.8,
-      //     fill: false,
-      //     clickable: true,
-      //     showMeasurements: true,
-      //     // measurementOptions: { imperial: true },
-      //   },
-      //   polygonOption: {
-      //     color: "#ffe502",
-      //     weight: 3,
-      //     opacity: 0.8,
-      //     fill: true,
-      //     fillColor: "#ffe502",
-      //     fillOpacity: 0.2,
-      //     clickable: true,
-      //     showMeasurements: true,
-      //     // measurementOptions: { imperial: true },
-      //   },
-      //   temPolylineOptions: {
-      //     color: "#F54124",
-      //     dashArray: 10,
-      //     weight: 2,
-      //     opacity: 0.8,
-      //     fill: false,
-      //     clickable: true,
-      //     showMeasurements: true,
-      //     // measurementOptions: { imperial: true },
-      //   },
-      // };
+      const option = {
+        layout: [true, false, false], //Layout[0]：激活一次可添加要素个数，true:可添加多个，false：只可添加1个；Layout[1]：激活按钮是否为激活状态（激活一次只可添加一个要素时才会给是否要改变激活按钮的选中状态，可添加多个要素时，按钮不允许失活，需要手动触发）；true:激活状态，false：失活状态；Layout[2]：添加量测完成后是否要清除量测图层，true：清除，false：不清
+        polylineOptions: {
+          color: "#F54124",
+          weight: 3,
+          opacity: 0.8,
+          fill: false,
+          clickable: true,
+          showMeasurements: true,
+          // measurementOptions: { imperial: true },
+        },
+        polygonOption: {
+          color: "#ffe502",
+          weight: 3,
+          opacity: 0.8,
+          fill: true,
+          fillColor: "#ffe502",
+          fillOpacity: 0.2,
+          clickable: true,
+          showMeasurements: true,
+          // measurementOptions: { imperial: true },
+        },
+        temPolylineOptions: {
+          color: "#F54124",
+          dashArray: 10,
+          weight: 2,
+          opacity: 0.8,
+          fill: false,
+          clickable: true,
+          showMeasurements: true,
+          // measurementOptions: { imperial: true },
+        },
+      };
       // if (!this.MeasureControl) {
       //   this.MeasureControl = new MeasureControl(
       //     this.map,
@@ -285,6 +285,7 @@ export default {
       //   );
       // }
       // this.MeasureControl.active();
+      this.Layers.measureLineOrArea(option);
     },
     addPoint() {
       const Geomoptions = {

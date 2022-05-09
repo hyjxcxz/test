@@ -41,6 +41,15 @@ export default class Layers {
   addHeatLayer(opt) {
     this._PointLayers.heatLayer(opt, this._layerGroup);
   }
+  measureLineOrArea(opt) {
+    this._Measures.activeMeasureLineOrArea(opt, this._map);
+  }
+  disActiveMeasureLineOrArea() {
+    this._Measures.disActiveMeasureLineOrArea();
+  }
+  removeMeasureLineOrAreaLayer() {
+    this._Measures.removeMeasureLineOrAreaLayer();
+  }
   clearPointLayer() {
     this._PointLayers.clearPointLayer(this._layerGroup);
     // this._layerGroup.removeLayer(this._markerPointLayer); //直接根据layer本身清除对应图层

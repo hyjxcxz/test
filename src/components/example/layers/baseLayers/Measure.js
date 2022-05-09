@@ -4,6 +4,7 @@ export default class Measures {
   constructor(map) {
     this._map = map;
     this.polylineMeasureControl = null;
+    this._MeasureLineOrArea = null;
   }
   measureDistance() {
     const mapControlManager = new L.GW.MapControlManager({
@@ -16,6 +17,26 @@ export default class Measures {
       mapControlManager.add(this.polylineMeasureControl);
     }
     mapControlManager.active(this.polylineMeasureControl);
+  }
+  activeMeasureLineOrArea(opt) {
+    this._MeasureLineOrArea = new L.GW.control.MeasureLineOrAreaControl(
+      this._map,
+      opt,
+      (leayer, geoJson, activeButton) => {
+        console.log(leayer, geoJson, activeButton);
+      }
+    );
+    this._MeasureLineOrArea.active();
+  }
+  disActiveMeasureLineOrArea() {
+    if (this._MeasureLineOrArea) {
+      this._MeasureLineOrArea.disactive();
+    }
+  }
+  removeMeasureLineOrAreaLayer() {
+    if (this._MeasureLineOrArea) {
+      this._MeasureLineOrArea.removeMeasureLayer();
+    }
   }
   // measureDistance() {
   //   this._map.options.editable = true;

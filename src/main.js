@@ -10,7 +10,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-draw/dist/leaflet.draw.css";
 // require('../vendors/l.ellipse')
 // import 'leaflet-measure-path/leaflet-measure-path'
-// import 'leaflet-measure-path/leaflet-measure-path.css'
+import "leaflet-measure-path/leaflet-measure-path.css";
 // import  'leaflet-editable/src/Leaflet.Editable'
 // import 'leaflet.path.drag/src/Path.Drag'
 
