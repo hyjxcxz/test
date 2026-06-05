@@ -1,0 +1,31 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+
+  :deep(.el-header) {
+    background-color: #01579b;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: white;
+
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+    }
+  }
+
+  :deep(.el-main) {
+    flex: 1;
+    padding: 20px;
+  }
+}

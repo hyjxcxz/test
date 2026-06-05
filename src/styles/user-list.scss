@@ -1,0 +1,12 @@
+.user-list-container {
+  background-color: white;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+
+  .toolbar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+  }
+}
